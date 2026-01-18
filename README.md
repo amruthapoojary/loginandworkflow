@@ -5,7 +5,7 @@ After a successful login, the dashboard displays a list of workflows with filter
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Login Page
 ![Login Page](./login.png)
