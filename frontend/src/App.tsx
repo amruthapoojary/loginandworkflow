@@ -6,23 +6,22 @@ import WorkflowsPage from "./pages/WorkflowsPage";
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [search, setSearch] = useState(""); // 🔍 search state
 
-  // 🔐 LOGIN SCREEN
   if (!loggedIn) {
     return <Login onLogin={() => setLoggedIn(true)} />;
   }
 
-  // 📊 DASHBOARD LAYOUT
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
       <Sidebar />
 
-      {/* Main Content */}
+      {/* Main content */}
       <div className="flex flex-col flex-1">
-        <Header />
+        <Header search={search} setSearch={setSearch} />
         <main className="p-6 overflow-auto">
-          <WorkflowsPage />
+          <WorkflowsPage search={search} />
         </main>
       </div>
     </div>

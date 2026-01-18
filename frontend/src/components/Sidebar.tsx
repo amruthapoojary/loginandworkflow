@@ -1,17 +1,32 @@
+import { LayoutDashboard, FolderPlus, Clock, Database, BarChart3, BookOpen } from "lucide-react";
+
 export default function Sidebar() {
   return (
-    <div className="w-64 bg-blue-900 text-white min-h-screen p-4">
-      <h1 className="text-xl font-bold mb-6">Workspace</h1>
-
-      <ul className="space-y-3 text-sm">
-        <li className="opacity-80 hover:opacity-100 cursor-pointer">Workspace</li>
-        <li className="opacity-80 hover:opacity-100 cursor-pointer">Recent</li>
-        <li className="opacity-80 hover:opacity-100 cursor-pointer">Catalog</li>
-        <li className="bg-blue-800 px-3 py-2 rounded">Workflow</li>
-        <li className="opacity-80 hover:opacity-100 cursor-pointer">Compute</li>
-        <li className="opacity-80 hover:opacity-100 cursor-pointer">SQL Editor</li>
-        <li className="opacity-80 hover:opacity-100 cursor-pointer">Dashboard</li>
-      </ul>
-    </div>
+    <aside className="w-64 h-screen bg-gray-900 text-white p-4 rounded-r-3xl flex flex-col gap-4">
+      <h2 className="text-xl font-semibold mb-4">Workspace</h2>
+      <nav className="flex flex-col gap-3 text-sm">
+        <div className="flex items-center gap-2 cursor-pointer hover:text-blue-400">
+          <LayoutDashboard size={18} /> Dashboard
+        </div>
+        <div className="flex items-center gap-2 cursor-pointer hover:text-blue-400">
+          <FolderPlus size={18} /> New Workspace
+        </div>
+        <div className="flex items-center gap-2 cursor-pointer hover:text-blue-400">
+          <Clock size={18} /> Recent
+        </div>
+        <div className="flex items-center gap-2 cursor-pointer hover:text-blue-400">
+          <BookOpen size={18} /> Catalog
+        </div>
+        <div className="flex items-center gap-2 cursor-pointer hover:text-blue-400 text-blue-400 font-semibold">
+          Workflow
+        </div>
+        <div className="flex items-center gap-2 cursor-pointer hover:text-blue-400">
+          <Database size={18} /> Compute
+        </div>
+        <div className="flex items-center gap-2 cursor-pointer hover:text-blue-400">
+          <BarChart3 size={18} /> SQL Editor
+        </div>
+      </nav>
+    </aside>
   );
 }
